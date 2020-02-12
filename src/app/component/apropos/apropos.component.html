@@ -1,0 +1,76 @@
+<div>
+    <div class="info">
+        <h1>Mission du stage</h1>
+        Recupere des données depuis notre serveur rest et gerer le traitement & l'affichage <br>
+        Dans l'idée la mission sera de moderniser <a href="http://185.162.208.123:8888/">cette page ci (armaor
+            shape)</a>
+        avec la solution
+        angular. <br>
+    </div>
+    <div class="info">
+        <h1>Information sur le test</h1>
+        J'ai préparer sur notre serveur angular une partie que tu pourra contacter pour effectuer le test. <br>
+        Le but sera de recuperer un object json depuis notre server rest pour ensuite l'afficher et faire du traitement. <br>
+
+        <ul>
+            <li>Communiquer avec un serveur rest</li>
+            <li>Recuperer & afficher le resultat de cette communication</li>
+            <li>Faire du traitement sur ce resultat (habilage, calcule)</li>
+        </ul>
+
+        <h3>Ex 1:</h3>
+        La premier fonction à appeler sera "GetAllGrade" <br>
+        Elle te retournera un tableau en JSON Contenant les champs suivant : <br>
+        {{' <br>
+        { <br>
+          "Name": string, <br>
+          "ShortName": string, <br>
+          "Code": string, <br>
+          "Default": number <br>
+        } <br>
+      '}} <br>
+
+        Je veux que tu sois capable d'appeler la fonction (au lancement de la page ou avec un evenement sur un btn). <br>
+        Et pouvoir afficher les informations depuis sur un composant angular (celle ci par exemple). <br>
+
+        Astuce: <br>
+        Sur angular je te conseil de regarde le *ngFor="let item of items" sur une balise pour faire une boucle d'un <br>
+        tableau <br>
+        et en plus complex tu a le mat-table . <br>
+
+        <h3>Ex 2:</h3>
+        Je voudrais que tu appel la fonction "GetDiamFromGrade" Pour recuperer le poids linéaire par diameter d'une nuance <br>
+        d'acier en passant en parameter la nuance de l'acier <br>
+        Ex (185.162.208.123:3002/datasnap/rest/TServerMethods/GetDiamFromGrade/T) <br>
+
+        En plus de ceci il faudrais que l'appel de la fonction soit dissimuler dans le tableau des nuance et qu'on en fasse <br>
+        l'appel en cliquand sur un bouton. <br>
+
+        Restriction : <br>
+        <ul>
+            <li>Ecrire le code js dans le composant angular (ici app.component.ts)</li>
+            <li>Utiliser Angular material pour l'affichage (pas de bootstrap)</li>
+        </ul>
+
+    </div>
+    <div class="info">
+        <h2>Info / AIDE</h2>
+        <h4>Pour se connecter a notre serveur</h4>
+        <ul>
+            <li>IP: 185.162.208.123</li>
+            <li>PORT: 3002</li>
+            <li>CHEMIN D'ACCES: /datasnap/rest/TServerMethods/"LE NOM DE LA
+                FONCTION"/"Argument1"/"Argument2"/"ArgumentX" <br>
+            </li>
+        </ul>
+        <h4>Exmaple requete rest</h4>
+        <a
+            href="http://185.162.208.123:3002/datasnap/rest/TServerMethods/EchoString/toto">http://185.162.208.123:3002/datasnap/rest/TServerMethods/EchoString/toto</a>
+        <br>
+        Cette exemple call le serveur reste la fonction "EchoString" de la class "TServerMethods" avec comme parametre
+        "toto". <br>
+        <h4>Divers</h4>
+        Pour info j'ai fait aussi cette exo de mon coté pour essayer de mesurer la difficulter, tu peut retrouver le 
+        resultat ici pour verifier les communication, et t'inspirer. 
+    </div>
+</div>
