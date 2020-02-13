@@ -13,7 +13,9 @@ export class InfoNuanceComponent implements OnInit {
   dataSource: any[];
   displayedColumns;
   diams: Array<object> = [];
-  
+  diametre: any[] ;
+  test: Array<object> = [] ;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
@@ -22,18 +24,25 @@ export class InfoNuanceComponent implements OnInit {
       this.displayedColumns = ["Name", "ShortName", "Code", "Default"];
       this.dataSource = this.result;
 
-      for (let cd of this.result) {
-        ArmaServConnection.GET(this.http, "GetDiamFromGrade", [
-          cd.Code
-        ]).subscribe(details => {
-
-          this.result.push(details.result[0]);
-          console.log(this.result[0]);
-        });
-      }
     });
-    console.log(this.diams);
   }
+  
+  diamLinearWeight(i){
+    ArmaServConnection.GET(this.http, "GetDiamFromGrade", [
+      i
+    ]).subscribe(details => {
+      
+      this.diametre = details.result[0]
+      this.test = this.diametre[0]
+      console.log(this.test);
+
+      var x = document.getElementById(i);
+      for (i = 0; i < 6; i++ ) {
+      x.innerHTML = "coucou"
+    }
+    });
+  }
+
 }
 
 interface DiamLinearWeight {
